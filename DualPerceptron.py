@@ -63,8 +63,8 @@ class DualPerceptron:
         for epoch in tqdm(range(self.epochs), desc=f'Training model with {self.kernel} kernel'):
             errors = 0
             for i in range(self.n):
-                w = sum(self.alpha[j] * y_train[j] * self.gram_matrix[i, j] for j in range(self.n)) + self.b
-                if w * y_train[i] <= 0:
+                w = sum(self.alpha[j] * y_train[j] * self.gram_matrix[i, j] for j in range(self.n)) + self.b if self.alpha[j] != 0 else 0
+                if w * y_train[i] <= 0: 
                     self.alpha[i] += 1
                     self.b += y_train[i]*r2
                     errors += 1
