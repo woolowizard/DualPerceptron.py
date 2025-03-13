@@ -42,6 +42,3 @@ obj = new_prediction(params, X_test, y_test)
 print(obj['stats'])
 print(obj['pred'])
 ```
-
-5. **Relazione del Progetto**
-   - La relazione completa è disponibile nel file `RelazioneCommodiAndrea.pdf`.
